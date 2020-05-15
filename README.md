@@ -793,8 +793,8 @@ public final class ModalPresenter<ViewController: UIViewController>: ModalPresen
 
 * リファクタリング前→後
 	* 平均: 135行 → 69行
-	* 最大: 573行 → 308行
-	* 全体: 1080行 → 5276行
+	* 最大: 573行 → 259行
+	* 全体: 1080行 → 5357行
 
 <details>
 <summary>内訳</summary>
