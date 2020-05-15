@@ -1,4 +1,6 @@
 # リファクタリング・チャレンジ （リバーシ編） iOS版
+[![CircleCI](https://circleci.com/gh/Kuniwak/reversi-ios/tree/master.svg?style=svg)](https://circleci.com/gh/Kuniwak/reversi-ios/tree/master)
+
 
 > 本チャレンジは、 _Fat View Controller_ として実装された[リバーシ](https://en.wikipedia.org/wiki/Reversi)アプリをリファクタリングし、どれだけクリーンな設計とコードを実現できるかというコンペティションです（ジャッジが優劣を判定するわけではなく、設計の技を競い合うのが目的です）。
 >
