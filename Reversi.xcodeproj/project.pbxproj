@@ -31,8 +31,9 @@
 		2475EF6C0907E13AA8C83C80 /* GameAutomatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EBE7C5148ED3A35739FC /* GameAutomatorController.swift */; };
 		6238891524682F2C005C45E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E7F54398CCDBA97EC915 /* ViewController.swift */; };
 		6238891624682F9E005C45E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6238891424681745005C45E6 /* Main.storyboard */; };
+		624974FA246F7592009D9A81 /* Hydra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624974F9246F7592009D9A81 /* Hydra.framework */; };
+		624974FB246F7592009D9A81 /* Hydra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 624974F9246F7592009D9A81 /* Hydra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62AE60FB2463AD2D00751115 /* UIKitTestable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AE60FA2463AD2D00751115 /* UIKitTestable.framework */; };
-		62AE60FE2463AD3800751115 /* UIKitTestable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AE60FD2463AD3800751115 /* UIKitTestable.framework */; };
 		62AE60FF2463AD3800751115 /* UIKitTestable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62AE60FD2463AD3800751115 /* UIKitTestable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62B7C4AD245EDBE8006F58CE /* ReversiCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B7C4AC245EDBE8006F58CE /* ReversiCore.framework */; };
 		62B7C4AE245EDBE8006F58CE /* ReversiCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62B7C4AC245EDBE8006F58CE /* ReversiCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -68,6 +69,7 @@
 			files = (
 				62D97B2524530022008513D3 /* MirrorDiffKit.framework in Embed Frameworks */,
 				62D97B2724530022008513D3 /* ReactiveSwift.framework in Embed Frameworks */,
+				624974FB246F7592009D9A81 /* Hydra.framework in Embed Frameworks */,
 				62B7C4AE245EDBE8006F58CE /* ReversiCore.framework in Embed Frameworks */,
 				62AE60FF2463AD3800751115 /* UIKitTestable.framework in Embed Frameworks */,
 			);
@@ -104,6 +106,7 @@
 		2475EF5ACB7DFE190D6A8E98 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2475EFAB82099EC18C58B45C /* GameAutomatorProgressViewBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameAutomatorProgressViewBinding.swift; sourceTree = "<group>"; };
 		6238891424681745005C45E6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		624974F9246F7592009D9A81 /* Hydra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Hydra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62AE60FA2463AD2D00751115 /* UIKitTestable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIKitTestable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62AE60FD2463AD3800751115 /* UIKitTestable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIKitTestable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B7C4AC245EDBE8006F58CE /* ReversiCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReversiCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,8 +133,8 @@
 				62D97B2424530022008513D3 /* MirrorDiffKit.framework in Frameworks */,
 				62AE60FB2463AD2D00751115 /* UIKitTestable.framework in Frameworks */,
 				62D97B2624530022008513D3 /* ReactiveSwift.framework in Frameworks */,
+				624974FA246F7592009D9A81 /* Hydra.framework in Frameworks */,
 				62B7C4AD245EDBE8006F58CE /* ReversiCore.framework in Frameworks */,
-				62AE60FE2463AD3800751115 /* UIKitTestable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +223,7 @@
 		62D97B2124530022008513D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				624974F9246F7592009D9A81 /* Hydra.framework */,
 				62AE60FA2463AD2D00751115 /* UIKitTestable.framework */,
 				62D97B2224530022008513D3 /* MirrorDiffKit.framework */,
 				62D97B2324530022008513D3 /* ReactiveSwift.framework */,
