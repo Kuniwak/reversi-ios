@@ -99,6 +99,11 @@
 		624974F1246F573B009D9A81 /* Hydra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62B7C56124610E7B006F58CE /* Hydra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		624974F2246F573E009D9A81 /* Hydra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B7C56124610E7B006F58CE /* Hydra.framework */; };
 		624974F3246F573E009D9A81 /* Hydra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62B7C56124610E7B006F58CE /* Hydra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		624974F4246F6F24009D9A81 /* BoardAnimationStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E25D9D8AE583B3750DB7 /* BoardAnimationStateTests.swift */; };
+		624974F5246F6F24009D9A81 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EEC04F70898B0F79E92E /* BoardTests.swift */; };
+		624974F6246F6F24009D9A81 /* FlippableLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E87CFEEC6A63B771FDE1 /* FlippableLineTests.swift */; };
+		624974F7246F6F24009D9A81 /* GameStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475EA334FA6F75F62EDBCDB /* GameStateTests.swift */; };
+		624974F8246F6F24009D9A81 /* GameWithAutomatorsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2475E93B032B40C6A65EADA0 /* GameWithAutomatorsModelTests.swift */; };
 		624D5F54245E9C9700C3EBFC /* ReversiCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624D5F4B245E9C9700C3EBFC /* ReversiCore.framework */; };
 		624D5F7B245E9CE000C3EBFC /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624D5F7A245E9CE000C3EBFC /* MirrorDiffKit.framework */; };
 		624D5F7C245E9CE000C3EBFC /* MirrorDiffKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 624D5F7A245E9CE000C3EBFC /* MirrorDiffKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -577,6 +582,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				624974F8246F6F24009D9A81 /* GameWithAutomatorsModelTests.swift in Sources */,
+				624974F5246F6F24009D9A81 /* BoardTests.swift in Sources */,
+				624974F7246F6F24009D9A81 /* GameStateTests.swift in Sources */,
+				624974F6246F6F24009D9A81 /* FlippableLineTests.swift in Sources */,
+				624974F4246F6F24009D9A81 /* BoardAnimationStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
