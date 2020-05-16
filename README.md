@@ -1,4 +1,5 @@
 # リファクタリング・チャレンジ （リバーシ編） iOS版
+[![Build Status](https://app.bitrise.io/app/43c2cea1787e1f40/status.svg?token=PkGqB0hJXe_oLLL2pg4uMw&branch=master)](https://app.bitrise.io/app/43c2cea1787e1f40)
 [![CircleCI](https://circleci.com/gh/Kuniwak/reversi-ios/tree/master.svg?style=svg)](https://circleci.com/gh/Kuniwak/reversi-ios/tree/master)
 
 
