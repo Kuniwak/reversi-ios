@@ -232,7 +232,7 @@ public struct Password {
 ## アーキテクチャについて
 
 <details>
-<summary>本質ではないので割愛</summary>
+<summary>本質ではないので割愛（見たい方はどうぞ）</summary>
 
 ```
    +-----------+
