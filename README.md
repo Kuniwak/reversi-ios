@@ -231,6 +231,8 @@ public struct Password {
 
 ## アーキテクチャについて
 
+<details>
+<summary>本質ではないので割愛</summary>
 
 ```
    +-----------+
@@ -818,6 +820,7 @@ public final class ModalPresenter<ViewController: UIViewController>: ModalPresen
 これらを駆使して ViewHandle は UIKit やサードパーティ製の View ライブラリを、本体プロジェクトで扱いやすい形へ変換しています。
 
 さて、このリファクタリングの結果をみてみましょう。
+</details>
 
 
 
