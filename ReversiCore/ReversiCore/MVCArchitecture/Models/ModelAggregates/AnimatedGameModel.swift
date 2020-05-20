@@ -56,6 +56,7 @@ public class AnimatedGameModel: AnimatedGameModelProtocol {
 
     private func start() {
         // BUG10: Did not apply board at BoardView because forgot notify accepted commands to boardAnimationModel.
+        // BUG19: The code became unexpectedly observing order sensitive, it caused inconsistent animation status.
         gameModel.gameModelStateDidChange
             .producer
             .take(during: self.lifetime)
