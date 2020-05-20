@@ -498,7 +498,7 @@ public protocol GameModelProtocol: GameCommandReceivable {
 
 ### Model Aggregate とは
 
-Model Aggregate は複数の Model を意味のある単位で束ねたものです。Model は基本的にとても小さな状態機械として設計するので（理由は後述）、これらを適切に組み合わせてより大きな状態機械を構成するための手段です。
+Model Aggregate は複数の Model を意味のある単位で束ねたものです。Model は基本的にとても小さな状態機械として設計するので（理由は後述）、これらを適切に組み合わせてより大きな状態機械を構成するための手段です（より一般的には [Hierarchal Finite State Machine](https://web.stanford.edu/class/cs123/lectures/CS123_lec08_HFSM_BT.pdf) として知られています）。
 
 例えば、次の `AutoBackupGameModel` は、先ほどの `GameModel` と UserDefaults への書き込み状況をもつ `UserDefaultsModel` の2つを集約した Model Aggregate です。このクラスの責務は、ゲームの盤面を管理する `GameModel` の状態を `UserDefaultsModel` から読み込み、そして `GameModel` の変更を監視して `UserDefaults` へ書き込みを要求します：
 
