@@ -231,6 +231,8 @@ public struct Password {
 
 ## アーキテクチャについて
 
+<details>
+<summary>本質ではないので割愛（見たい方はどうぞ）</summary>
 
 ```
    +-----------+
@@ -496,7 +498,7 @@ public protocol GameModelProtocol: GameCommandReceivable {
 
 ### Model Aggregate とは
 
-Model Aggregate は複数の Model を意味のある単位で束ねたものです。Model は基本的にとても小さな状態機械として設計するので（理由は後述）、これらを適切に組み合わせてより大きな状態機械を構成するための手段です。
+Model Aggregate は複数の Model を意味のある単位で束ねたものです。Model は基本的にとても小さな状態機械として設計するので（理由は後述）、これらを適切に組み合わせてより大きな状態機械を構成するための手段です（より一般的には [Hierarchal Finite State Machine](https://web.stanford.edu/class/cs123/lectures/CS123_lec08_HFSM_BT.pdf) として知られています）。
 
 例えば、次の `AutoBackupGameModel` は、先ほどの `GameModel` と UserDefaults への書き込み状況をもつ `UserDefaultsModel` の2つを集約した Model Aggregate です。このクラスの責務は、ゲームの盤面を管理する `GameModel` の状態を `UserDefaultsModel` から読み込み、そして `GameModel` の変更を監視して `UserDefaults` へ書き込みを要求します：
 
@@ -621,6 +623,8 @@ View Binding はこの例のように1つの View Handle だけを持ちます�
 
 * 順序不定で複数の View Handle へ反映したい → View Binding を分割する
 * 決まった順序で View Handle へ反映したい → 複数の View Handle を 1 つの新しい View Handle に包んで順序を固定して呼び出す
+
+View Binding をここまで細かく分割している理由は、予備知識なしで開発に参加した人が複雑なコードの分割方法を知らない可能性が高いからです。以前に「[RxExample MVVM のその先へ（Fat ViewModel の倒し方）](https://qiita.com/Kuniwak/items/015cddcf37e854713a2e)」でも解説しましたが、分割をサボると自分の手を離れてコードが大きくなっていった際のコードの綺麗さに段違いの差が出ます。なので、単純な例でもなるべく分割をサボらないようにしています。
 
 次は View Handle の解説です。
 
@@ -818,6 +822,7 @@ public final class ModalPresenter<ViewController: UIViewController>: ModalPresen
 これらを駆使して ViewHandle は UIKit やサードパーティ製の View ライブラリを、本体プロジェクトで扱いやすい形へ変換しています。
 
 さて、このリファクタリングの結果をみてみましょう。
+</details>
 
 
 
@@ -1042,7 +1047,7 @@ BUG 18: Alert not appeared because it called before viewDidAppear. (at Reversi/M
 
 今回、動作確認を容易にするために工夫（型を厳密にしモデルを小さくするなど）をしてきました。ただこれが十分ではなかったようです。今回痛感したのは、モデル検査をするために著名な理論上での表現との対応しやすさが重要で、この準備が足りていなかったということです。
 
-具体的には、DispatchQueue の上に載った ReactiveSwift がどのように並行制御をし、その上に乗る状態機械の振る舞いと対応する理論的表現の理解が足りていませんでした（一番最初にトンチンカンなモデルを作ってしまった）。今回は [Spin](http://spinroot.com/spin/whatispin.html) での検査を目指していたので、私の記述した状態機械が[CSP](https://ja.wikipedia.org/wiki/Communicating_Sequential_Processes) でどのように表現されるかを知っておくべきでした。
+具体的には、DispatchQueue の上に載った ReactiveSwift とそのさらに上に乗る状態機械の振る舞いに対応する理論的表現の理解が足りていませんでした（一番最初にトンチンカンなモデルを作ってしまった）。今回は [Spin](http://spinroot.com/spin/whatispin.html) での検査を目指していたので、私の記述した状態機械が[CSP](https://ja.wikipedia.org/wiki/Communicating_Sequential_Processes) でどのように表現されるかを知っておくべきでした。
 
 さて、幸運にも発表が延期されて時間的猶予ができたため Serial DispatchQueue の上で動く状態機械の CSP モデルを構築できました（[Promela で記述されたモデル](https://github.com/Kuniwak/reversi-ios/blob/acf2175f6a56ee965b41552a87705ee244fbf58b/model-checkers/reversi.pml)）。ただし、DispatchQueue が間に挟まった結果として DispatchQueue の上に載っていなければ考慮しなくてもいいはずだった「**DispatchQueue の発散（無限に work item が積まれる）**」という問題に直面しました。今回のモデルにはユーザーを再現した View 層から Model 層へのリクエストを発行するプロセスが用意されているのですが、このプロセスが際限なくモデル層の DispatchQueue へ work item を積めてしまうのです（もちろんユーザー入力が超高速なら現実でも再現できます）。これがモデル検査だと厄介な問題を引き起こします。
 
@@ -1055,7 +1060,7 @@ BUG 18: Alert not appeared because it called before viewDidAppear. (at Reversi/M
 
 さて、この仮説を採用すればなんとかモデ検査はできるようになるものの依然として根深い問題が残っています。DispatchQueue の上ではある状態から次の状態までの間に大量の中間状態（DispatchQueue のキューの積まれ状況など）が含まれます。すると網羅検査の探索範囲が無駄に広くなり探索に時間がかかるようになるのです。これに対処するためには状態数を制限できる唯一のパラメータであるユーザー入力数上限を下げるしかなく、しかしこれは長時間アプリを操作された場合の欠陥を見逃すリスクを高めます。もし DispatchQueue 上でなければこれよりかなり状態数を小さくできるのですから DispatchQueue による弊害といえるでしょう。そもそも生の thread を扱わず thread 間の通信に DispatchQueue のような仕組みが考案されたのは、生スレッド上では deadlock や race condition や不適切な thread の管理などの種々の問題を引き起こしやすい問題を緩和するためだったはずです。しかし、これによってモデル検査が制限されるのは本末転倒といえるでしょう。最近は生スレッドを触らずとも Go や Erlang が備えるような理論的な性質のよいモデル検査しやすい抽象もたくさんありますから、これらを選べるとよいのでしょう。
 
-まとめると、DispatchQueue には長所と短所の多寡が逆転する状況があるということです。もし、開発するシステムがそこそこぶっ壊れてもいいならモデル検査をしない選択肢があるので、この場合は Goroutine のような CSP 具象などを扱うよりかは DispatchQueue を使ったほうが安全でしょう。しかし、もし開発するシステムが絶対にぶっ壊れてはいけないのであれば、モデル検査相当の静的検査は不可欠ですから DispatchQueue による状態数増が短所として強くあらわれます。しかしモデル検査があれば deadlock などはちゃんと見つけてくれるでしょうから、この場合は Goroutine 相当の性質のいい CSP 具象を選ぶべきでしょう。
+まとめると、**DispatchQueue には長所と短所の多寡が逆転する状況があるということです**。もし、開発するシステムがそこそこぶっ壊れてもいいならモデル検査をしない選択肢があるので、この場合は Goroutine のような CSP 具象などを扱うよりかは DispatchQueue を使ったほうが安全でしょう。しかし、もし開発するシステムが絶対にぶっ壊れてはいけないのであれば、モデル検査相当の静的検査は不可欠ですから DispatchQueue による状態数増が短所として強くあらわれます。しかしモデル検査があれば deadlock などはちゃんと見つけてくれるでしょうから、この場合は Goroutine 相当の性質のいい CSP 具象を選ぶべきでしょう。
 
 
 
