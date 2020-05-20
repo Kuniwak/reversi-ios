@@ -624,6 +624,8 @@ View Binding はこの例のように1つの View Handle だけを持ちます�
 * 順序不定で複数の View Handle へ反映したい → View Binding を分割する
 * 決まった順序で View Handle へ反映したい → 複数の View Handle を 1 つの新しい View Handle に包んで順序を固定して呼び出す
 
+View Binding をここまで細かく分割している理由は、予備知識なしで開発に参加した人が複雑なコードの分割方法を知らない可能性が高いからです。以前に「[RxExample MVVM のその先へ（Fat ViewModel の倒し方）](https://qiita.com/Kuniwak/items/015cddcf37e854713a2e)」でも解説しましたが、分割をサボると自分の手を離れてコードが大きくなっていった際のコードの綺麗さに段違いの差が出ます。なので、単純な例でもなるべく分割をサボらないようにしています。
+
 次は View Handle の解説です。
 
 
