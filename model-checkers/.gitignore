@@ -1,0 +1,4 @@
+*.trail
+pan
+pan.*
+/out/

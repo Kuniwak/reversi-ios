@@ -1,0 +1,43 @@
+#!/bin/bash
+set -euo pipefail
+
+BASE_DIR="$(cd "$(dirname "$0")"; pwd)"
+WORKSPACE_DIR="${1:-$(pwd)}"
+SED_SCRIPT="${BASE_DIR}/mtype.sed"
+
+
+pretty-mtype() {
+	sed -E -f "$SED_SCRIPT"
+}
+
+
+BASE_DIR=$(cd "$(dirname "$0")"; pwd)
+(cd "${BASE_DIR}"
+	echo "# Environment information:"
+	git rev-parse HEAD 1>&2
+	git status --short 1>&2
+	gcc --version 1>&2
+	spin -V 1>&2
+	echo
+)
+
+(cd "${WORKSPACE_DIR}"
+	git clean -fx '*.trail' pan 'pan.*'
+
+	exit_code=0
+
+	while read pml_file; do
+		spin -a -o2 "${pml_file}"
+		gcc -DREACH -o ./pan ./pan.c
+		./pan -e -c5 | pretty-mtype
+
+		while read trail_file; do
+			exit_code=1
+			echo
+			echo '------'
+			spin -pglsr -k "${trail_file}" -t "${pml_file}" | pretty-mtype
+		done < <(find . -maxdepth 1 -name '*.trail' | head -3)
+	done < <(find . -maxdepth 1 -name '*.pml')
+
+	exit "$exit_code"
+)
