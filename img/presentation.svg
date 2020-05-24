@@ -7,6 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="180"
+   inkscape:export-xdpi="180"
+   inkscape:export-filename="/Users/yuki.kokubun/Development/reversi-ios/img/presentation.png"
    sodipodi:docname="presentation.svg"
    inkscape:version="1.0rc1 (09960d6, 2020-04-09)"
    id="svg7389"
@@ -265,8 +268,8 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="89.447631"
-     inkscape:cx="459.51397"
+     inkscape:cy="93.464326"
+     inkscape:cx="509.72266"
      inkscape:zoom="0.49792179"
      inkscape:pageshadow="2"
      inkscape:pageopacity="1"
@@ -300,9 +303,9 @@
        width="68.791672"
        height="74.083344"
        x="216.9584"
-       y="5.2916694" />
+       y="8.4666691" />
     <rect
-       y="26.458328"
+       y="29.633331"
        x="227.54175"
        height="10.583334"
        width="26.458336"
@@ -314,64 +317,64 @@
        width="26.458336"
        height="10.583334"
        x="224.8959"
-       y="23.812492" />
+       y="26.987495" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="238.09064"
-       y="30.886496"
+       y="34.061497"
        id="text6234"><tspan
          sodipodi:role="line"
          id="tspan6232"
          x="238.09064"
-         y="30.886496"
+         y="34.061497"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">UIView</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="205.3853"
-       y="23.195232"
+       y="26.370235"
        id="text6425"><tspan
          sodipodi:role="line"
          id="tspan6423"
          x="205.3853"
-         y="23.195232"
+         y="26.370235"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">apply</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="235.10611"
-       y="14.799724"
+       y="17.974724"
        id="text6675"><tspan
          sodipodi:role="line"
          id="tspan6673"
          x="235.10611"
-         y="14.799724"
+         y="17.974724"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">Third-party</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path6845"
-       d="m 5.291662,82.020792 v 5.291657"
+       d="m 5.291662,85.195794 v 5.291657"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path6859"
-       d="M 6.6145758,84.666619 H 72.76042"
+       d="M 6.6145758,87.841621 H 72.76042"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6865);marker-end:url(#marker6875)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 74.083362,82.020792 v 5.291657"
+       d="m 74.083362,85.195794 v 5.291657"
        id="path6861"
        inkscape:connector-curvature="0" />
     <text
        id="text7293"
-       y="91.740608"
+       y="94.915611"
        x="38.594707"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="91.740608"
+         y="94.915611"
          x="38.594707"
          id="tspan7291"
          sodipodi:role="line">Model checking</tspan></text>
@@ -381,9 +384,9 @@
        width="50.27084"
        height="10.583334"
        x="227.54175"
-       y="58.208344" />
+       y="61.383347" />
     <rect
-       y="55.562515"
+       y="58.737518"
        x="224.8959"
        height="10.583334"
        width="50.27084"
@@ -391,17 +394,17 @@
        style="fill:#ffffff;fill-opacity:1;stroke:#424242;stroke-width:0.571566;stroke-miterlimit:4;stroke-dasharray:none" />
     <text
        id="text8250"
-       y="62.636524"
+       y="65.811523"
        x="249.73232"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="62.636524"
+         y="65.811523"
          x="249.73232"
          id="tspan8248"
          sodipodi:role="line">UIViewController</tspan></text>
     <rect
-       y="34.395828"
+       y="37.570831"
        x="161.39584"
        height="10.583334"
        width="37.041676"
@@ -409,12 +412,12 @@
        style="fill:#ffffff;fill-opacity:1;stroke:#424242;stroke-width:0.571566;stroke-miterlimit:4;stroke-dasharray:none" />
     <text
        id="text8468"
-       y="41.469822"
+       y="44.644825"
        x="179.88229"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="41.469822"
+         y="44.644825"
          x="179.88229"
          id="tspan8466"
          sodipodi:role="line">View Handle</tspan></text>
@@ -424,20 +427,20 @@
        width="37.041676"
        height="10.583334"
        x="100.54165"
-       y="26.458363" />
+       y="29.633366" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="119.02809"
-       y="33.532356"
+       y="36.707359"
        id="text8591"><tspan
          sodipodi:role="line"
          id="tspan8589"
          x="119.02809"
-         y="33.532356"
+         y="36.707359"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">View Binding</tspan></text>
     <rect
-       y="42.333363"
+       y="45.508366"
        x="100.54165"
        height="10.583334"
        width="37.041676"
@@ -445,55 +448,55 @@
        style="fill:#ffffff;fill-opacity:1;stroke:#424242;stroke-width:0.571566;stroke-miterlimit:4;stroke-dasharray:none" />
     <text
        id="text8597"
-       y="49.40736"
+       y="52.582363"
        x="119.02809"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="49.40736"
+         y="52.582363"
          x="119.02809"
          id="tspan8595"
          sodipodi:role="line">Controller</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path8599"
-       d="m 137.58336,31.749997 h 13.22917 v 5.291667 h 7.93751"
+       d="m 137.58336,34.924999 h 13.22917 v 5.291667 h 7.93751"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8302)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8611)"
-       d="m 137.58336,47.624998 h 13.22917 v -5.291667 h 7.93751"
+       d="m 137.58336,50.8 h 13.22917 v -5.291667 h 7.93751"
        id="path8607"
        inkscape:connector-curvature="0" />
     <path
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
        id="path8685"
-       d="m 193.14588,34.395831 v -7.9375 h 29.10417"
+       d="m 193.14588,37.570833 v -7.9375 h 29.10417"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8689)" />
     <path
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
        id="path8745"
-       d="m 235.47922,37.041664 v 2.645834 h -34.39584"
+       d="M 235.47922,40.216666 V 42.8625 h -34.39584"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8749)" />
     <path
        inkscape:connector-curvature="0"
        id="path8817"
-       d="M 193.14588,44.979164 V 58.20833 h 29.10417"
+       d="m 193.14588,48.154166 v 13.229166 h 29.10417"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8821)" />
     <path
        inkscape:connector-curvature="0"
        id="path8889"
-       d="m 224.89588,63.499997 h -39.6875 v -15.875"
+       d="m 224.89588,66.674999 h -39.6875 v -15.875"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8893)" />
     <text
        id="text9017"
-       y="54.945236"
+       y="58.120239"
        x="205.3853"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="54.945236"
+         y="58.120239"
          x="205.3853"
          id="tspan9015"
          sodipodi:role="line">apply</tspan></text>
@@ -501,32 +504,32 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="231.31442"
-       y="45.949402"
+       y="49.124405"
        id="text9021"><tspan
          sodipodi:role="line"
          id="tspan9019"
          x="231.31442"
-         y="45.949402"
+         y="49.124405"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">delegate</tspan></text>
     <text
        id="text9025"
-       y="69.761902"
+       y="72.936905"
        x="201.15189"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="69.761902"
+         y="72.936905"
          x="201.15189"
          id="tspan9023"
          sodipodi:role="line">delegate</tspan></text>
     <text
        id="text9113"
-       y="27.957735"
+       y="31.132738"
        x="157.76025"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="27.957735"
+         y="31.132738"
          x="157.76025"
          id="tspan9111"
          sodipodi:role="line">data-binding</tspan></text>
@@ -534,15 +537,15 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="151.93939"
-       y="54.416069"
+       y="57.591072"
        id="text9117"><tspan
          sodipodi:role="line"
          id="tspan9115"
          x="151.93939"
-         y="54.416069"
+         y="57.591072"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">observe</tspan></text>
     <rect
-       y="5.2916694"
+       y="8.4666691"
        x="7.9374957"
        height="74.083344"
        width="66.145836"
@@ -550,12 +553,12 @@
        style="fill:#e5e5e5;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none" />
     <text
        id="text9123"
-       y="14.799724"
+       y="17.974724"
        x="31.376856"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="14.799724"
+         y="17.974724"
          x="31.376856"
          id="tspan9121"
          sodipodi:role="line">Reactive Domain</tspan></text>
@@ -563,12 +566,12 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="113.39767"
-       y="14.799724"
+       y="17.974724"
        id="text9127"><tspan
          sodipodi:role="line"
          id="tspan9125"
          x="113.39767"
-         y="14.799724"
+         y="17.974724"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">Presentation</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#424242;stroke-width:0.571566;stroke-miterlimit:4;stroke-dasharray:none"
@@ -576,9 +579,9 @@
        width="50.270832"
        height="10.583334"
        x="15.875002"
-       y="26.458332" />
+       y="29.633335" />
     <rect
-       y="23.812492"
+       y="26.987495"
        x="13.22917"
        height="10.583334"
        width="50.270832"
@@ -586,12 +589,12 @@
        style="fill:#ffffff;fill-opacity:1;stroke:#424242;stroke-width:0.571566;stroke-miterlimit:4;stroke-dasharray:none" />
     <text
        id="text9133"
-       y="30.886496"
+       y="34.061497"
        x="38.06554"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="30.886496"
+         y="34.061497"
          x="38.06554"
          id="tspan9131"
          sodipodi:role="line">Model Aggregator</tspan></text>
@@ -599,38 +602,38 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path9137"
-       d="m 100.54167,31.749997 -31.749999,1e-6"
+       d="M 100.54167,34.924999 68.791671,34.925"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker9141)" />
     <text
        id="text9217"
-       y="28.707621"
+       y="31.882624"
        x="85.574608"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="28.707621"
+         y="31.882624"
          x="85.574608"
          id="tspan9215"
          sodipodi:role="line">observe</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path9261"
-       d="M 100.54167,47.624997 H 58.208338 v -7.9375"
+       d="M 100.54167,50.799999 H 58.208338 v -7.9375"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker9265)" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="85.574608"
-       y="53.049282"
+       y="56.224285"
        id="text9353"><tspan
          sodipodi:role="line"
          id="tspan9351"
          x="85.574608"
-         y="53.049282"
+         y="56.224285"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">request</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker9419);marker-end:url(#marker9429)"
-       d="M 75.406246,84.666619 H 146.84378"
+       d="M 75.406246,87.841621 H 146.84378"
        id="path9415"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -638,37 +641,37 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="109.50302"
-       y="91.740608"
+       y="94.915611"
        id="text9593"><tspan
          sodipodi:role="line"
          id="tspan9591"
          x="109.50302"
-         y="91.740608"
+         y="94.915611"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583">Model checking</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path9595"
-       d="m 148.16673,82.020792 v 5.291657"
+       d="m 148.16673,85.195794 v 5.291657"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path9657"
-       d="M 149.48962,84.666619 H 287.07296"
+       d="M 149.48962,87.841621 H 287.07296"
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker9661);marker-end:url(#marker9671)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 288.39597,82.020792 v 5.291657"
+       d="m 288.39597,85.195794 v 5.291657"
        id="path9889"
        inkscape:connector-curvature="0" />
     <text
        id="text9917"
-       y="91.740608"
+       y="94.915611"
        x="217.45316"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;line-height:1.25;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         y="91.740608"
+         y="94.915611"
          x="217.45316"
          id="tspan9915"
          sodipodi:role="line">Visual testing</tspan></text>
