@@ -237,62 +237,13 @@ public struct UserName {
 
 ### ドメイン周辺の関連図
 
-```
-                          + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +  Presentation
-    Static Domain         :  Reactive Domain                                          :                   +--------------+
-                          :                                                           :  +---(observe)--- | View Binding |.
-    +------------+        :       +-------+                    +------------------+   :  |                +--------------+|
-    | Data/State |. <-- (use) --  | Model |. <--+-(observing)- | Model Aggregator |.  :  |                 +--------------+
-    +------------+|       :       +-------+|    |              +------------------+| <---+
-     +------------+       :        +-------+    |               +------------------+  :  |
-                          :                     |                  A                  :  |                +------------+
-                          :                     +------------------+                  :  +---(request)--- | Controller |.
-                          + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +                   +------------+|
-                                                                                                           +------------+
-   
-   |<--- Unit testing --->|<---------------------- Model Checking ------------------->|<--- Manual testing ---------------->|
-```
+![](./img/model-domain.png)
 
 
 
 ### プレゼンテーション周辺の関連図
 
-```
----
- A    + - - - - -+                  +--------------+ 
- |    : Reactive : <--(observing)-- | View Binding |. 
- |    : Domain   :                  +--------------+| --+                
- |    :          :                   +--------------+   |
- |    :          :                                      |
- |    :          :                  +------------+      |                
- |    :          : <---(request)--- | Controller |.     |
- |    :          :                  +------------+|     |
- |    + - - - - -+                   +------------+     |
- |                                           |          |
- | Manual testing                            |    (data binding)
- V                                           |          |
----                                     (observing)     |
- A                                           |          |
- | Visual testing                            |          |
- |                                           |          |
- |    + - - - - - - - - - +                  |          |
- |    : Third-pary Views  :                  |          |
- |    : (hard to modify)  :                  |          |
- |    :                   :                  V          |
- |    : +--------+        :            +------------+   |                             
- |    : | UIView |. <--+----(apply)--- | ViewHandle | <-+
- |    : +--------+| <--|--:--+         +------------+                              
- |    :  +--------+    |  :  |               |
- |    :                |  :  |               |
- |    :  +------+      |  :  |               |
- |    :  | UIVC |. <---+  :  |               |
- |    :  +------+| <------:--+-----(injecting delegate)
- |    :   +------+        :
- |    :                   :
- V    + - - - - - - - - - +
----
-
-```
+![](./img/presentation.png)
 
 
 ### 概要
@@ -456,7 +407,7 @@ public class BoardMVCComposer {
 
 このリポジトリにおける Model は状態機械として設計されています。この状態機械は外からの要求に応じて内部状態を変化させ、変化を外部へ通知するようになっています。
 
-ここではリバーシのゲームの状態を管理する `GameModel` をみてみましょう。`GameModel` が内部にもつ状態は次の2つの状態のグループをもちます：
+ここではリバーシのゲームの状態を管理する `GameModel` をみてみましょう。`GameModel` が内部にもつ状態は次の3つの状態のグループをもちます：
 
 ```swift
 public enum GameModelState {
@@ -473,28 +424,7 @@ public enum GameModelState {
 
 もし `GameModel` の公開しているメソッドである `pass()` `place(...)` `reset(...)` が呼ばれると、それが妥当な要求なら Model は内部状態を次のように変化させます：
 
-```
-
-                                       (init)
-                                          |
-                                          |
-        +-------- (place) -------------+  |  +--- (pass/place/reset) --+
-        V                              |  V  |                         |
-  +----------+                      +-----------+                      | 
-  | mustPass | -- (place/reset) --> | mustPlace | <--------------------+
-  +----------+                      +-----------+
-                                       A     |
-                                       |     |
-                                    (reset)  |
-                                       |     |
-                                       |  (place)
-                                       |     |
-                                       |     V
-                                    +-----------+
-                                    | completed |
-                                    +-----------+
-
-```
+![](./img/game-model-state-diagram.png)
 
 ```swift
 public protocol GameCommandReceivable: class {
@@ -528,39 +458,7 @@ public protocol GameModelProtocol: GameCommandReceivable {
 
 Model Aggregate は複数の Model を意味のある単位で束ねたものです。Model は基本的にとても小さな状態機械として設計するので（理由は後述）、これらを適切に組み合わせてより大きな状態機械を構成するための手段です（より一般的には [Hierarchal Finite State Machine](https://web.stanford.edu/class/cs123/lectures/CS123_lec08_HFSM_BT.pdf) として知られています）。
 
-```
-   +-----------+
-   | GameModel | <----------+      Model Aggregator                Model Aggregator
-   +-----------+            |   +---------------------+         +-------------------+
-                            +---| AutoBackupGameModel | <-------| AnimatedGameModel | <------------+
-   +-------------------+    |   +---------------------+         +-------------------+              |
-   | UserDefaultsModel | <--+                                                                      |
-   +-------------------+                                                                           |
-                                                                                                   |
-   +--------------------+                                                                          |
-   | AutomatorA12sModel | <--+        Model Aggregator                                             |
-   +--------------------+    |  +----------------------------+                                     |
-                             +--| AutoBkupAutomatorA12sModel | <--+                                |
-   +-------------------+     |  +----------------------------+    |        Model Aggregator        |
-   | UserDefaultsModel | <---+                                    |   +------------------------+   |
-   +-------------------+                                          +-- | GameWitAutomatorsModel | <-+
-                                                                  |   +------------------------+   |
-   +------------------------+                                     |                                |
-   | AutomatorProgressModel | <-----------------------------------+                                |
-   +------------------------+                                                                      |
-                                                                                                   |
-  +------------------------------------------------------------------------------------------------+
-  |
-  |            Model Aggregator
-  |    +---------------------------------+                      +- - - - - - - +
-  + <--| AnimatedGameWithAutomatorsModel | <----- (observe)---- : ViewBindings :
-       +---------------------------------+                      +- - - - - - - +
-                        A
-                        |                                       +- - - - - - -+
-                        +-------------------- (post request) -- : Controllers :
-                                                                +- - - - - - -+
-a12s = availabilities
-```
+![](./img/model-aggregators.png)
 
 例えば、次の `AutoBackupGameModel` は、先ほどの `GameModel` と UserDefaults への書き込み状況をもつ `UserDefaultsModel` の2つを集約した Model Aggregate です。このクラスの責務は、ゲームの盤面を管理する `GameModel` の状態を `UserDefaultsModel` から読み込み、そして `GameModel` の変更を監視して `UserDefaults` へ書き込みを要求します：
 
