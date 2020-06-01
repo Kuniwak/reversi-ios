@@ -1023,9 +1023,9 @@ BUG 19: The code became unexpectedly observing order sensitive, it caused incons
 
 今回、動作確認を容易にするために数々の工夫（型を厳密にしモデルを小さくするなど）をしてきました。ただこれが十分ではなかったようです。特に痛感したのはバグの発見にモデル検査が必要だと気づいていたものの、モデル検査をするためには著名な理論での表現しやすさが重要であるとは気づいておらず、準備が足りていなかったということです。
 
-具体的には、DispatchQueue の上に載った ReactiveSwift や、その上に乗る状態機械の振る舞いと対応する理論的表現の理解が足りていませんでした（一番最初は見当外れなモデルを作ってしまった）。今回は [Spin](http://spinroot.com/spin/whatispin.html) での検査を目指していたので、私の記述した状態機械が [CSP](https://ja.wikipedia.org/wiki/Communicating_Sequential_Processes) でどのように表現されるかを知っておくべきでした。
+具体的には、DispatchQueue の上に載った ReactiveSwift や、その上に乗る状態機械の振る舞いと対応する理論的表現の理解が足りていませんでした（一番最初は見当外れなモデルを作ってしまった）。今回は [Spin](http://spinroot.com/spin/whatispin.html) での検査を目指していたので、私の記述した状態機械が Spin でどのように表現されるかを知っておくべきでした。
 
-さて、幸運にも発表が延期されて時間的猶予ができたため Serial DispatchQueue の上で動く状態機械の CSP モデルを構築できました（[Promela で記述されたモデル](https://github.com/Kuniwak/reversi-ios/blob/acf2175f6a56ee965b41552a87705ee244fbf58b/model-checkers/reversi.pml)）。ただし、DispatchQueue が間に挟まった結果として DispatchQueue の上に載っていなければ考慮しなくてもいいはずだった「**DispatchQueue の発散（無限に work item が積まれる）**」という問題に直面しました。今回のモデルにはユーザーを再現した View 層から Model 層へのリクエストを発行するプロセスが用意されているのですが、このプロセスが **際限なく** モデル層の DispatchQueue へ work item を積めてしまうのです（もちろんユーザー入力が超高速なら現実でも再現できます）。これがモデル検査だと厄介な問題を引き起こします。
+さて、幸運にも発表が延期されて時間的猶予ができたため Serial DispatchQueue の上で動く状態機械の Spin のモデルを構築できました（[Spin の記述言語 Promela で記述されたモデル](https://github.com/Kuniwak/reversi-ios/blob/acf2175f6a56ee965b41552a87705ee244fbf58b/model-checkers/reversi.pml)）。ただし、DispatchQueue が間に挟まった結果として DispatchQueue の上に載っていなければ考慮しなくてもいいはずだった「**DispatchQueue の発散（無限に work item が積まれる）**」という問題に直面しました。今回のモデルにはユーザーを再現した View 層から Model 層へのリクエストを発行するプロセスが用意されているのですが、このプロセスが **際限なく** モデル層の DispatchQueue へ work item を積めてしまうのです（もちろんユーザー入力が超高速なら現実でも再現できます）。これがモデル検査だと厄介な問題を引き起こします。
 
 よくあるモデル検査の仕組みは、与えられたモデルからありえる状態をすべて列挙してくまなく検査するというものです（[前にモデル検査の仕組みを解説した記事](https://qiita.com/Kuniwak/items/937470123d94a766186d)）。そのため、探索対象となる状態の数を有限に保つ必要があります（そうでないと探索が停止しない）。そこで Promela では状態を構成する要素である channel の buffer の長さを有限に制限しています。そうすると DispatchQueue の再現に使う channel の buffer も有限にせざるをえません（= DispatchQueue に積まれる work item の数が制限される）。しかしこのとき探索範囲の中に際限なく work item が積まれてこれ以上 work item を積めないという状態があわられます。この状態は理論的にはありえるものの経験的にはほぼ起こりえないことはわかると思います。しかし、モデル検査は網羅的な探索であるがゆえにこのような状態の考慮を要求します。このとき、とりうる選択肢はいくつかあります：
 
@@ -1036,7 +1036,7 @@ BUG 19: The code became unexpectedly observing order sensitive, it caused incons
 
 さて、この仮説を採用すればなんとかモデル検査はできるようになるものの依然として根深い問題が残っています。DispatchQueue の上ではある状態機械の状態から次の状態までの間に大量の暗黙な中間状態（DispatchQueue のキューの積まれ状況など）が含まれます。すると網羅検査の探索範囲が無駄に広くなり探索に時間がかかるようになるのです。これに対処するためには状態数を制限できる唯一のパラメータであるユーザー入力数上限を下げるしかなく、しかしこれは長時間アプリを操作された場合の欠陥を見逃すリスクを高めます。もし DispatchQueue 上でなければこれよりかなり状態数を小さくできるのですから DispatchQueue による弊害といえるでしょう。そもそも生の thread を扱わず thread 間の通信に DispatchQueue のような仕組みが考案された理由の1つは、生スレッド上で deadlock や競合、不適切な thread 管理などの種々の問題を引き起こしにくくするためだったはずです。しかし、安全よりに倒したこの対応によってより高い安全性を目指すモデル検査が制限されるのは本末転倒といえるでしょう。最近は Go の備えるモデル検査しやすい抽象（goroutine と channel）もよく知られているのですから、これらを選ぶ方が望ましいでしょう。
 
-まとめると、**開発するシステムによっては DispatchQueue が足枷になる状況があるということです**。もし、開発するシステムがそこそこぶっ壊れてもいいならモデル検査をしない選択肢もあるので、この場合は goroutine のような CSP 具象などを扱うよりかは DispatchQueue を使ったほうが些細な欠陥で deadlock することは少ないですから安全でしょう。しかし、もし開発するシステムが絶対にぶっ壊れてはならないのであれば、モデル検査相当の静的検査は不可欠ですから DispatchQueue による状態数増が短所として強くあらわれます。そしてモデル検査があれば deadlock などはちゃんと見つられますから、この場合は goroutine のようなモデル検査しやすいものを選ぶべきでしょう（例えば [Venice](https://github.com/Zewo/Venice) とか？）。
+まとめると、**開発するシステムによっては DispatchQueue が足枷になる状況があるということです**。もし、開発するシステムがそこそこぶっ壊れてもいいならモデル検査をしない選択肢もあるので、この場合は goroutine のような些細な欠陥で deadlock するものを扱うよりかは DispatchQueue を使ったほうが安全でしょう。しかし、もし開発するシステムが絶対にぶっ壊れてはならないのであれば、モデル検査相当の静的検査は不可欠ですから DispatchQueue による状態数増が短所として強くあらわれます。そしてモデル検査があれば deadlock などはちゃんと見つられますから、この場合は goroutine のようなモデル検査しやすいものを選ぶべきでしょう（例えば [Venice](https://github.com/Zewo/Venice) とか？）。
 
 
 
